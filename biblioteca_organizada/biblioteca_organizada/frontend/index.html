@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca | Início</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <a class="logo" href="/">📚 Biblioteca</a>
+  <nav>
+    <a href="/">Início</a><a href="#catalogo">Catálogo</a><a href="#reservas">Minhas reservas</a>
+    <a href="#emprestimos">Empréstimos</a><a href="#contato">Contato</a>
+  </nav>
+  <div id="areaUsuario"><button class="btn btn-claro" onclick="abrirPagina('login')">Entrar</button></div>
+</header>
+<main>
+  <section class="hero">
+    <div><span class="tag">UM MUNDO DE HISTÓRIAS</span><h1>Encontre sua próxima<br><em>grande leitura.</em></h1>
+    <p>Pesquise livros, conheça autores e faça suas reservas em poucos cliques.</p>
+    <button class="btn" onclick="document.querySelector('#catalogo').scrollIntoView({behavior:'smooth'})">Explorar catálogo</button></div>
+    <div class="hero-figura">📖<small>Leia • Descubra • Imagine</small></div>
+  </section>
+  <section class="secao" id="catalogo">
+    <div class="titulo"><div><span class="tag">EXPLORE</span><h2>Catálogo de livros</h2></div></div>
+    <div class="busca"><input id="campoBusca" placeholder="Buscar por título, ISBN ou autor..."><button class="btn" onclick="carregarLivros()">Buscar</button></div>
+    <div id="listaLivros" class="grade"><p>Carregando livros...</p></div>
+  </section>
+  <section class="secao painel" id="reservas"><span class="tag">SUA CONTA</span><h2>Minhas reservas</h2><div id="listaReservas">Entre na sua conta para consultar suas reservas.</div></section>
+  <section class="secao painel" id="emprestimos"><span class="tag">ACOMPANHAMENTO</span><h2>Meus empréstimos</h2><div id="listaEmprestimos">Entre na sua conta para consultar seus empréstimos.</div></section>
+  <section class="secao contato" id="contato"><div><span class="tag">FALE CONOSCO</span><h2>Tem alguma dúvida?</h2><p>Envie sua mensagem para a equipe da biblioteca.</p></div>
+    <form id="formContato"><input name="nome" placeholder="Seu nome" required><input name="email" type="email" placeholder="Seu e-mail" required><input name="assunto" placeholder="Assunto" required><textarea name="mensagem" placeholder="Escreva sua mensagem..." required></textarea><button class="btn">Enviar mensagem</button></form>
+  </section>
+</main>
+<footer>Biblioteca • Projeto Integrado DWS + POO + BD</footer>
+<div id="modal" class="modal escondido"><div class="modal-card"><button class="fechar" onclick="fecharModal()">×</button><div id="conteudoModal"></div></div></div>
+<div id="aviso" class="aviso"></div>
+<script src="js/script.js"></script>
+</body>
+</html>

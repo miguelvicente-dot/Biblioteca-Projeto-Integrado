@@ -1,0 +1,37 @@
+classDiagram
+    class Leitor {
+        +nome
+        +email
+        +telefone
+    }
+    class Livro {
+        +titulo
+        +isbn
+        +ano_publicacao
+    }
+    class Autor {
+        +nome
+        +nacionalidade
+    }
+    class Reserva {
+        +id_leitor
+        +id_livro
+        +status
+    }
+    class Emprestimo {
+        +id_leitor
+        +id_livro
+        +data_emprestimo
+        +data_prevista
+    }
+    class Contato {
+        +nome
+        +email
+        +assunto
+        +mensagem
+    }
+    Leitor "1" --> "0..*" Reserva
+    Livro "1" --> "0..*" Reserva
+    Leitor "1" --> "0..*" Emprestimo
+    Livro "1" --> "0..*" Emprestimo
+    Livro "0..*" --> "0..*" Autor : livro_autor
